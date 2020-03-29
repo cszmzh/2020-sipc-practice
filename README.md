@@ -4,6 +4,8 @@
 
 这是为大一同学Java组学习SpringBoot课程中提供的源码，进行辅助学习
 
+lesson后面的数字代表第几节课，如lesson1为第一次上课后的源码
+
 ### 二.关于课程回放
 
 请打开链接：https://space.bilibili.com/54183978/
