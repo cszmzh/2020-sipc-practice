@@ -163,9 +163,9 @@ form-data传递
     firstOrg:String,
     firstBra:String,
     firstReason:String,
-    secondOrg:String,
-    secondBra:String,
-    secondReason:String,
+    secondOrg:String,		//不是必须
+    secondBra:String,		//不是必须
+    secondReason:String,	//不是必须
     isDispensing:Boolean //是否调剂
 
 `````
