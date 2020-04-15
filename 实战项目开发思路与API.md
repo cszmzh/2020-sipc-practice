@@ -31,7 +31,7 @@ CREATE TABLE report(
   	reason_second VARCHAR(200) NOT NULL COMMENT'申请第二志愿理由',
   	is_dispensing smallint(1) NOT NULL COMMENT'是否接受调剂',
   	update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE organization(
