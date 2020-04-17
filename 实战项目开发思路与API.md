@@ -170,6 +170,8 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 ##### 1.1 注销
 
+[POST] / user / logout
+
 参数
 
 | 参数名称 | 是否必须 | 说明   |
