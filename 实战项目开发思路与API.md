@@ -133,14 +133,60 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 
 
-#### 登录
+#### 账号管理
 
-**必须为post方法**
+##### 1.0 登录
+
+[POST] / user / login
+
+参数
+
+| 参数名称 | 是否必须 | 说明   |
+| -------- | -------- | ------ |
+| username | Y        | 用户名 |
+| password | Y        | 密码   |
+
+返回
 
 `````javascript
 {
-    username:String,//用户名
-    passowrd:String //密码
+		"code":0,
+		"msg":"登录成功",
+  	"data":{
+      	"username":"用户名",
+        "status":"用户权限状态"		//0为普通用户 1位管理员 2为超级管理员
+    }
+}
+
+{
+		"code":1,
+		"msg":"登录失败"
+}
+
+//同时会在游览器中保存名为username的Cookie，通过Cookie进行验证，前端可通过localStorage保存用户名与权限身份
+`````
+
+
+
+##### 1.1 注销
+
+参数
+
+| 参数名称 | 是否必须 | 说明   |
+| -------- | -------- | ------ |
+| username | Y        | 用户名 |
+
+返回
+
+`````javascript
+{
+		"code":0,
+		"msg":"注销成功"
+}
+
+{
+		"code":1,
+		"msg":"注销失败"
 }
 `````
 
@@ -152,29 +198,60 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 [POST] / report / insert
 
-`````javascript
-form-data传递
-    stdId:String,
-    stdName:String,
-    major:String,
-    classNum:String,
-    stdQQ:String,
-    stdPhone:String,
-    firstOrg:String,
-    firstBra:String,
-    firstReason:String,
-    secondOrg:String,		//不是必须
-    secondBra:String,		//不是必须
-    secondReason:String,	//不是必须
-    isDispensing:Boolean //是否调剂
+参数
 
-`````
+| 参数名称     | 是否必须 | 说明                                          |
+| ------------ | -------- | --------------------------------------------- |
+| stdId        | Y        | 学生学号 8位 2020开头                         |
+| stdName      | Y        | 学生姓名                                      |
+| major        | Y        | 专业名                                        |
+| classNum     | Y        | 若传入0则在检索第二志愿时过滤不接受调剂的学生 |
+| stdQQ        | Y        | 学生的QQ号                                    |
+| stdPhone     | Y        | 学生的手机号                                  |
+| firstOrg     | Y        | 第一志愿主组织名称                            |
+| firstBra     | Y        | 第一志愿分支名                                |
+| firstReason  | Y        | 第一志愿理由                                  |
+| secondOrg    | N        | 第二志愿主组织名称                            |
+| secondBra    | N        | 第二志愿分支名                                |
+| secondReason | N        | 第二志愿理由                                  |
+| isDispensing | Y        | 是否接受调剂 传入0不接受 传入1接受            |
+
+返回
+
+~~~ JSON
+{
+		"code":0,
+		"msg":"success"
+}
+
+{
+		"code":1,
+		"msg":"验证码错误"
+}
+
+{
+		"code":2,
+		"msg":"第一志愿信息不完整"
+}
+
+{
+		"code":3,
+		"msg":"志愿已填写"
+}
+
+{
+		"code":4,
+		"msg":"姓名为空"
+}
+
+//手机号与QQ号、学号要用正则表达式验证，否则后端会抛出异常
+~~~
 
 
 
 ##### 1.1 查询全部志愿(分页实现) 
 
-权限：需要超级管理员身份，若不是超级管理员身份返回所属组织的所有志愿
+权限：需要管理员（返回所属主组织全部志愿）/超级管理员（全部）
 
 [GET] / report / getAll
 
@@ -226,19 +303,17 @@ form-data传递
 
 
 
-##### 1.2 根据学号查询志愿信息
+##### 1.2 根据学号查询一条志愿详情
 
-权限：需要超级管理员
+权限：需要管理员（返回所属组织志愿信息）/超级管理员（全部）
 
 [GET] / report / getByStuId
 
 参数
 
-| 参数名称 | 是否必须 | 说明           |
-| -------- | -------- | -------------- |
-| page     | Y        | 页数           |
-| pageSize | Y        | 一页显示多少条 |
-| stuId    | Y        | 学生学号       |
+| 参数名称 | 是否必须 | 说明     |
+| -------- | -------- | -------- |
+| stdId    | Y        | 学生学号 |
 
 返回
 
@@ -247,9 +322,6 @@ form-data传递
 		"code":0,
 		"msg":"success",
 		"data":{
-				“total”:1,					//总学生数目
-				"report_list":[
-						{
 							"stdId":"20185584"			//学号
 							"stdName":"张钊铭", 			 	 //姓名
 							"major":"计算机科学与技术",		//专业
@@ -270,9 +342,8 @@ form-data传递
  							isEnroll:Boolean, 	 //是否已录取
 							"update_time":"2019-07-26",	//志愿修改时间
 							"create_time":"2019-07-26",	//志愿创建时间
-						}
-				]
-		}
+  						"remark":"备注" 	//备注
+			}
 }
 ~~~
 
@@ -327,7 +398,12 @@ form-data传递
 ~~~ json
 {
 		"code":0,
-		"msg":"success"
+		"msg":"删除成功"
+}
+
+{
+		"code":1,
+		"msg":"删除失败"
 }
 ~~~
 
@@ -335,26 +411,39 @@ form-data传递
 
 ##### 1.5 根据学号录取学生
 
-权限：需要管理员权限，录取到自己所属的组织，超级管理员可任意录取
+权限：需要管理员/超级管理员权限
 
 [POST] /report/ enroll
 
 参数
 
-| 参数名称     | 是否必须 | 说明           |
-| ------------ | -------- | -------------- |
-| stdId        | Y        | 学生学号       |
-| organization | Y        | 录取组织       |
-| branch       | Y        | 录取的组织分支 |
+| 参数名称     | 是否必须 | 说明             |
+| ------------ | -------- | ---------------- |
+| stdId        | Y        | 学生学号         |
+| organization | Y        | 录取组织名       |
+| branch       | Y        | 录取的组织分支名 |
 
 返回
 
 ~~~ json
 {
 		"code":0,
-		"msg":"success"
+		"msg":"录取成功"
+}
+
+{
+		"code":1,
+		"msg":"录取失败"
 }
 ~~~
+
+
+
+##### 1.6 志愿数据分析
+
+权限：需要超级管理员
+
+[POST] /report/ analyse
 
 
 
@@ -397,3 +486,4 @@ form-data传递
 
 
 
+更多接口等待完善
