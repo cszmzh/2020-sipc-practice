@@ -309,7 +309,7 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 权限：需要管理员（返回所属组织志愿信息）/超级管理员（全部）
 
-[GET] / report / getByStuId
+[GET] / report / getByStdId
 
 参数
 
