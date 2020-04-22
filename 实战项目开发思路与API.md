@@ -10,7 +10,7 @@ CREATE TABLE `student` (
   `stu_class` smallint(2) NOT NULL COMMENT '学生班级 用1位整形数字表示',
   `stu_phone` varchar(11) NOT NULL COMMENT '手机号',
   `stu_qq` varchar(11) DEFAULT NULL COMMENT 'QQ号',
-  `stu_status` varchar(3) DEFAULT '未录取',
+  `stu_status` varchar(10) DEFAULT '未录取',
   `org_id` smallint(5) DEFAULT NULL COMMENT'所属学生组织id',
   PRIMARY KEY (`stu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -30,6 +30,7 @@ CREATE TABLE report(
   	reason_first VARCHAR(200) NOT NULL COMMENT'申请第一志愿理由',
   	reason_second VARCHAR(200) NOT NULL COMMENT'申请第二志愿理由',
   	is_dispensing smallint(1) NOT NULL COMMENT'是否接受调剂',
+  	remark varchar(300) DEFAULT NULL COMMENT'面试备注',
   	update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -93,15 +94,29 @@ select `a`.`stu_id` AS `stu_id`,
 `c`.`is_dispensing` AS `is_dispensing`,
 `a`.`stu_status` AS `stu_status`,
 `c`.`update_time` AS `update_time`,
-`c`.`create_time` AS `create_time` 
-from ((((`student` `a` 
-left join `major` `b` on((`a`.`stu_major` = `b`.`major_id`))) 
-left join `report` `c` on((`a`.`stu_id` = `c`.`student_id`))) 
-left join `organization` `d` on((`c`.`vol_first` = `d`.`org_id`))) 
-left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
+`c`.`create_time` AS `create_time` ,
+`c`.`remark` AS `remark`
+from ((((`student` `a` left join `major` `b` on((`a`.`stu_major` = `b`.`major_id`))) left join `report` `c` on((`a`.`stu_id` = `c`.`student_id`))) left join `organization` `d` on((`c`.`vol_first` = `d`.`org_id`))) left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 ~~~
 
 
+
+统计视图
+
+~~~sql
+select count(0) AS `total_report`,
+sum((`a`.`org_first` = '团委')) AS `tuanwei_first`,
+sum((`a`.`org_second` = '团委')) AS `tuanwei_second`,
+sum((`a`.`org_first` = '学生会')) AS `xueshenghui_first`,
+sum((`a`.`org_second` = '学生会')) AS `xueshenghui_second`,
+sum((`a`.`org_first` = '科技协会')) AS `kexie_first`,
+sum((`a`.`org_second` = '科技协会')) AS `kexie_second`,
+sum((`a`.`org_first` = '勤工助学中心')) AS `zhuxue_first`,
+sum((`a`.`org_second` = '勤工助学中心')) AS `zhuxue_second`,
+sum((`a`.`org_first` = '新闻中心')) AS `xinwen_first`,
+sum((`a`.`org_second` = '勤工助学中心')) AS `xinwen_second`
+from `report_view` `a`
+~~~
 
 
 
@@ -130,6 +145,16 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 ***
 
 "新闻中心":"摄影协会","新媒体部","记者团"
+
+
+
+关于学生录取状态情况：
+
+未被录取
+
+一志愿录取
+
+二志愿录取
 
 
 
@@ -449,6 +474,36 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 
 
+##### 1.7 数据统计
+
+权限：管理员/超级管理员
+
+[GET]/data/get
+
+返回
+
+~~~json
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "totalReport": 14,
+        "tuanweiFirst": 4,
+        "tuanweiSecond": 5,
+        "xueshenghuiFirst": 7,
+        "xueshenghuiSecond": 5,
+        "kexieFirst": 1,
+        "kexieSecond": 0,
+        "zhuxueFirst": 1,
+        "zhuxueSecond": 2,
+        "xinwenFirst": 1,
+        "xinwenSecond": 2
+    }
+}
+~~~
+
+
+
 #### 学生信息管理
 
 ##### 1.0查询所有学生信息
@@ -489,3 +544,4 @@ left join `organization` `e` on((`c`.`vol_second` = `e`.`org_id`)))
 
 
 更多接口等待完善
+
