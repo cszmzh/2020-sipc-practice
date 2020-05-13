@@ -299,15 +299,15 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		“total”:15,					//总学生数目
+		“total”:15,	//总学生数目
 			"report_list":[
 				{
-					"stdId":"20185584"			//学号
-					"stdName":"张钊铭", 			 	 //姓名
-					"major":"计算机科学与技术",		//专业
-					"classNum":"3",						//班级
-					"stdQQ":"798998087"				//QQ号
-					“stdPhone”:"13800138000",  //手机号
+					"stdId":"20185584",	//学号
+					"stdName":"张钊铭", //姓名
+					"major":"计算机科学与技术",	//专业
+					"classNum":"3",	//班级
+					"stdQQ":"798998087"	//QQ号
+					“stdPhone”:"13800138000", //手机号
 					firstWill:{	//第一志愿信息
         		organization:String, 
         		branch:String, 
@@ -319,7 +319,7 @@ from `report_view` `a`
         		reason:String
     			},
     			isDispensing:Boolean, //是否调剂
-  					isEnroll:boolean, 		//是否已录取
+  					isEnroll:boolean, 	//是否已录取
 						"update_time":"2019-07-26",	//志愿修改时间
 						"create_time":"2019-07-26",	//志愿创建时间
 					}
@@ -349,12 +349,12 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"stdId":"20185584"			//学号
-		"stdName":"张钊铭", 			 	 //姓名
-		"major":"计算机科学与技术",		//专业
-		"classNum":"3",						//班级
-		"stdQQ":"798998087"				//QQ号
-		“stdPhone”:"13800138000",  //手机号
+		"stdId":"20185584",	//学号
+		"stdName":"张钊铭", 	//姓名
+		"major":"计算机科学与技术",	//专业
+		"classNum":"3",	//班级
+		"stdQQ":"798998087"	//QQ号
+		“stdPhone”:"13800138000", //手机号
 		firstWill:{	//第一志愿信息
         organization:String, 
         branch:String, 
@@ -365,11 +365,11 @@ from `report_view` `a`
         branch:String, 
         reason:String
     },
-    isDispensing:Boolean //是否调剂
- 		isEnroll:Boolean, 	 //是否已录取
+    isDispensing:Boolean, //是否调剂
+ 		isEnroll:Boolean, //是否已录取
 		"update_time":"2019-07-26",	//志愿修改时间
 		"create_time":"2019-07-26",	//志愿创建时间
-  	"remark":"备注" 	//备注
+  	"remark":"备注" //备注
 		}
 }
 ~~~
@@ -395,13 +395,13 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"stdId":"20185584"			//学号
-		"stdName":"张钊铭", 			 	 //姓名
-		"major":"计算机科学与技术",		//专业
-		"classNum":"3",						//班级
-		"status":"未录取",					//录取状态
-		"organization":"团委"			//组织名，若未录取则不显示
-		"branch":"组织部"					//组织分支名，若未录取则不显示
+		"stdId":"20185584",	//学号
+		"stdName":"张钊铭",	//姓名
+		"major":"计算机科学与技术",	//专业
+		"classNum":"3",	//班级
+		"status":"未录取",	//录取状态
+		"organization":"团委",	//组织名，若未录取则不显示
+		"branch":"组织部"	//组织分支名，若未录取则不显示
 	}
 }
 ~~~
@@ -529,12 +529,12 @@ from `report_view` `a`
 		“total”:1,					//总学生数目
 		"student_list":[
 			{
-				"stdId":"20185584"			//学号
-				"stdName":"张钊铭", 			 	 //姓名
-				"major":"计算机科学与技术",		//专业
-				"classNum":"3",						//班级
-				"stdQQ":"798998087"				//QQ号
-				“stdPhone”:"13800138000",  //手机号
+				"stdId":"20185584",	//学号
+				"stdName":"张钊铭", //姓名
+				"major":"计算机科学与技术",	//专业
+				"classNum":"3",	//班级
+				"stdQQ":"798998087",	//QQ号
+				“stdPhone”:"13800138000" //手机号
 			}
 		]
 	}
