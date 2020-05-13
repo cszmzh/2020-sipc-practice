@@ -309,10 +309,10 @@ from `report_view` `a`
 				"stdQQ":"798998087",	//QQ号
 				"stdPhone":"13800138000", //手机号
 				"firstWill":{	//第一志愿信息
-        	"organization":"科协", 
-        	"branch":"科协", 
-        	"reason":"加入理由"
-    		},
+					"organization":"科协", 
+					"branch":"科协", 
+					"reason":"加入理由"
+				},
     		secondWill:{
         	"organization":"学生会", 
         	"branch":"文艺部", 
