@@ -318,8 +318,8 @@ from `report_view` `a`
         	"branch":"文艺部", 
         	"reason":"加入理由"
     		},
-    		"isDispensing":Boolean, //是否调剂
-  			"isEnroll":boolean, 	//是否已录取
+    		"isDispensing":"1", //是否调剂
+  			"isEnroll":"一志愿录取", 	//是否已录取
 				"update_time":"2019-07-26",	//志愿修改时间
 				"create_time":"2019-07-26",	//志愿创建时间
 			}
@@ -365,8 +365,8 @@ from `report_view` `a`
       "branch":"文艺部", 
       "reason":"加入理由"
     },
-    "isDispensing":Boolean, //是否调剂
- 		"isEnroll":Boolean, //是否已录取
+    "isDispensing":"0", //是否调剂
+ 		"isEnroll":"未被录取", //是否已录取
 		"update_time":"2019-07-26",	//志愿修改时间
 		"create_time":"2019-07-26",	//志愿创建时间
   	"remark":"备注" //备注
