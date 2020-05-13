@@ -309,14 +309,14 @@ from `report_view` `a`
 					"stdQQ":"798998087"	//QQ号
 					“stdPhone”:"13800138000", //手机号
 					firstWill:{	//第一志愿信息
-        		organization:String, 
-        		branch:String, 
-        		reason:String
+        		organization:"科协", 
+        		branch:"科协", 
+        		reason:"加入理由"
     			},
     			secondWill:{
-        		organization:String, 
-        		branch:String, 
-        		reason:String
+        		organization:"学生会", 
+        		branch:"文艺部", 
+        		reason:"加入理由"
     			},
     			isDispensing:Boolean, //是否调剂
   					isEnroll:boolean, 	//是否已录取
@@ -356,14 +356,14 @@ from `report_view` `a`
 		"stdQQ":"798998087"	//QQ号
 		“stdPhone”:"13800138000", //手机号
 		firstWill:{	//第一志愿信息
-        organization:String, 
-        branch:String, 
-        reason:String
+        organization:"科协", 
+        branch:"科协", 
+        reason:"加入理由"
     },
     secondWill:{
-        organization:String, 
-        branch:String, 
-        reason:String
+        organization:"学生会", 
+        branch:"文艺部", 
+        reason:"加入理由"
     },
     isDispensing:Boolean, //是否调剂
  		isEnroll:Boolean, //是否已录取
@@ -526,7 +526,7 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		“total”:1,					//总学生数目
+		"total":1,					//总学生数目
 		"student_list":[
 			{
 				"stdId":"20185584",	//学号
@@ -534,7 +534,7 @@ from `report_view` `a`
 				"major":"计算机科学与技术",	//专业
 				"classNum":"3",	//班级
 				"stdQQ":"798998087",	//QQ号
-				“stdPhone”:"13800138000" //手机号
+				"stdPhone":"13800138000" //手机号
 			}
 		]
 	}
