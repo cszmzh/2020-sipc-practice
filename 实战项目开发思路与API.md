@@ -175,17 +175,17 @@ from `report_view` `a`
 
 `````javascript
 {
-		"code":0,
-		"msg":"登录成功",
-  	"data":{
-      	"username":"用户名",
-        "status":"用户权限状态"		//0为普通用户 1位管理员 2为超级管理员
-    }
+	"code":0,
+	"msg":"登录成功",
+	"data":{
+		"username":"用户名",
+		"status":"用户权限状态"		//0为普通用户 1位管理员 2为超级管理员
+	}
 }
 
 {
-		"code":1,
-		"msg":"登录失败"
+	"code":1,
+	"msg":"登录失败"
 }
 
 //同时会在游览器中保存名为username的Cookie，通过Cookie进行验证，前端可通过localStorage保存用户名与权限身份
@@ -207,13 +207,13 @@ from `report_view` `a`
 
 `````javascript
 {
-		"code":0,
-		"msg":"注销成功"
+	"code":0,
+	"msg":"注销成功"
 }
 
 {
-		"code":1,
-		"msg":"注销失败"
+	"code":1,
+	"msg":"注销失败"
 }
 `````
 
@@ -247,28 +247,28 @@ from `report_view` `a`
 
 ~~~ JSON
 {
-		"code":0,
-		"msg":"success"
+	"code":0,
+	"msg":"success"
 }
 
 {
-		"code":1,
-		"msg":"验证码错误"
+	"code":1,
+	"msg":"验证码错误"
 }
 
 {
-		"code":2,
-		"msg":"第一志愿信息不完整"
+	"code":2,
+	"msg":"第一志愿信息不完整"
 }
 
 {
-		"code":3,
-		"msg":"志愿已填写"
+	"code":3,
+	"msg":"志愿已填写"
 }
 
 {
-		"code":4,
-		"msg":"姓名为空"
+	"code":4,
+	"msg":"姓名为空"
 }
 
 //手机号与QQ号、学号要用正则表达式验证，否则后端会抛出异常
@@ -296,35 +296,35 @@ from `report_view` `a`
 
 ~~~ JSON
 {
-		"code":0,
-		"msg":"success",
-		"data":{
-				“total”:15,					//总学生数目
-				"report_list":[
-						{
-							"stdId":"20185584"			//学号
-							"stdName":"张钊铭", 			 	 //姓名
-							"major":"计算机科学与技术",		//专业
-							"classNum":"3",						//班级
-							"stdQQ":"798998087"				//QQ号
-							“stdPhone”:"13800138000",  //手机号
-							firstWill:{	//第一志愿信息
-        					organization:String, 
-        					branch:String, 
-        					reason:String
-    					},
-    					secondWill:{
-        					organization:String, 
-        					branch:String, 
-        					reason:String
-    					},
-    					isDispensing:Boolean, //是否调剂
-  						isEnroll:boolean, 		//是否已录取
-							"update_time":"2019-07-26",	//志愿修改时间
-							"create_time":"2019-07-26",	//志愿创建时间
-						}
-				]
-		}
+	"code":0,
+	"msg":"success",
+	"data":{
+		“total”:15,					//总学生数目
+			"report_list":[
+				{
+					"stdId":"20185584"			//学号
+					"stdName":"张钊铭", 			 	 //姓名
+					"major":"计算机科学与技术",		//专业
+					"classNum":"3",						//班级
+					"stdQQ":"798998087"				//QQ号
+					“stdPhone”:"13800138000",  //手机号
+					firstWill:{	//第一志愿信息
+        		organization:String, 
+        		branch:String, 
+        		reason:String
+    			},
+    			secondWill:{
+        		organization:String, 
+        		branch:String, 
+        		reason:String
+    			},
+    			isDispensing:Boolean, //是否调剂
+  					isEnroll:boolean, 		//是否已录取
+						"update_time":"2019-07-26",	//志愿修改时间
+						"create_time":"2019-07-26",	//志愿创建时间
+					}
+			]
+	}
 }
 ~~~
 
@@ -346,31 +346,31 @@ from `report_view` `a`
 
 ~~~ JSON
 {
-		"code":0,
-		"msg":"success",
-		"data":{
-							"stdId":"20185584"			//学号
-							"stdName":"张钊铭", 			 	 //姓名
-							"major":"计算机科学与技术",		//专业
-							"classNum":"3",						//班级
-							"stdQQ":"798998087"				//QQ号
-							“stdPhone”:"13800138000",  //手机号
-							firstWill:{	//第一志愿信息
-        					organization:String, 
-        					branch:String, 
-        					reason:String
-    					},
-    					secondWill:{
-        					organization:String, 
-        					branch:String, 
-        					reason:String
-    					},
-    					isDispensing:Boolean //是否调剂
- 							isEnroll:Boolean, 	 //是否已录取
-							"update_time":"2019-07-26",	//志愿修改时间
-							"create_time":"2019-07-26",	//志愿创建时间
-  						"remark":"备注" 	//备注
-			}
+	"code":0,
+	"msg":"success",
+	"data":{
+		"stdId":"20185584"			//学号
+		"stdName":"张钊铭", 			 	 //姓名
+		"major":"计算机科学与技术",		//专业
+		"classNum":"3",						//班级
+		"stdQQ":"798998087"				//QQ号
+		“stdPhone”:"13800138000",  //手机号
+		firstWill:{	//第一志愿信息
+        organization:String, 
+        branch:String, 
+        reason:String
+    },
+    secondWill:{
+        organization:String, 
+        branch:String, 
+        reason:String
+    },
+    isDispensing:Boolean //是否调剂
+ 		isEnroll:Boolean, 	 //是否已录取
+		"update_time":"2019-07-26",	//志愿修改时间
+		"create_time":"2019-07-26",	//志愿创建时间
+  	"remark":"备注" 	//备注
+		}
 }
 ~~~
 
@@ -392,17 +392,17 @@ from `report_view` `a`
 
 ~~~ json
 {
-		"code":0,
-		"msg":"success",
-		"data":{
-				"stdId":"20185584"			//学号
-				"stdName":"张钊铭", 			 	 //姓名
-				"major":"计算机科学与技术",		//专业
-				"classNum":"3",						//班级
-				"status":"未录取",					//录取状态
-				"organization":"团委"			//组织名，若未录取则不显示
-				"branch":"组织部"					//组织分支名，若未录取则不显示
-		}
+	"code":0,
+	"msg":"success",
+	"data":{
+		"stdId":"20185584"			//学号
+		"stdName":"张钊铭", 			 	 //姓名
+		"major":"计算机科学与技术",		//专业
+		"classNum":"3",						//班级
+		"status":"未录取",					//录取状态
+		"organization":"团委"			//组织名，若未录取则不显示
+		"branch":"组织部"					//组织分支名，若未录取则不显示
+	}
 }
 ~~~
 
@@ -424,13 +424,13 @@ from `report_view` `a`
 
 ~~~ json
 {
-		"code":0,
-		"msg":"删除成功"
+	"code":0,
+	"msg":"删除成功"
 }
 
 {
-		"code":1,
-		"msg":"删除失败"
+	"code":1,
+	"msg":"删除失败"
 }
 ~~~
 
@@ -454,13 +454,13 @@ from `report_view` `a`
 
 ~~~ json
 {
-		"code":0,
-		"msg":"录取成功"
+	"code":0,
+	"msg":"录取成功"
 }
 
 {
-		"code":1,
-		"msg":"录取失败"
+	"code":1,
+	"msg":"录取失败"
 }
 ~~~
 
@@ -484,21 +484,21 @@ from `report_view` `a`
 
 ~~~json
 {
-    "code": 0,
-    "msg": "success",
-    "data": {
-        "totalReport": 14,
-        "tuanweiFirst": 4,
-        "tuanweiSecond": 5,
-        "xueshenghuiFirst": 7,
-        "xueshenghuiSecond": 5,
-        "kexieFirst": 1,
-        "kexieSecond": 0,
-        "zhuxueFirst": 1,
-        "zhuxueSecond": 2,
-        "xinwenFirst": 1,
-        "xinwenSecond": 2
-    }
+	"code": 0,
+	"msg": "success",
+  	"data": {
+    	"totalReport": 14,
+       "tuanweiFirst": 4,
+       "tuanweiSecond": 5,
+       "xueshenghuiFirst": 7,
+       "xueshenghuiSecond": 5,
+       "kexieFirst": 1,
+       "kexieSecond": 0,
+       "zhuxueFirst": 1,
+       "zhuxueSecond": 2,
+       "xinwenFirst": 1,
+       "xinwenSecond": 2
+   }
 }
 ~~~
 
@@ -523,21 +523,21 @@ from `report_view` `a`
 
 ~~~ JSON
 {
-		"code":0,
-		"msg":"success",
-		"data":{
-				“total”:1,					//总学生数目
-				"student_list":[
-						{
-							"stdId":"20185584"			//学号
-							"stdName":"张钊铭", 			 	 //姓名
-							"major":"计算机科学与技术",		//专业
-							"classNum":"3",						//班级
-							"stdQQ":"798998087"				//QQ号
-							“stdPhone”:"13800138000",  //手机号
-						}
-				]
-		}
+	"code":0,
+	"msg":"success",
+	"data":{
+		“total”:1,					//总学生数目
+		"student_list":[
+			{
+				"stdId":"20185584"			//学号
+				"stdName":"张钊铭", 			 	 //姓名
+				"major":"计算机科学与技术",		//专业
+				"classNum":"3",						//班级
+				"stdQQ":"798998087"				//QQ号
+				“stdPhone”:"13800138000",  //手机号
+			}
+		]
+	}
 }
 ~~~
 
