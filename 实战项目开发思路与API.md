@@ -179,7 +179,7 @@ from `report_view` `a`
 	"msg":"登录成功",
 	"data":{
 		"username":"用户名",
-		"status":"用户权限状态"	//0为普通用户 1位管理员 2为超级管理员
+		"status":"用户权限状态,0为普通用户,1为管理员,2为超级管理员"
 	}
 }
 
@@ -302,26 +302,26 @@ from `report_view` `a`
 		"total":15,	//总学生数目
 		"report_list":[
 			{
-				"stdId":"20185584",			//学号
-				"stdName":"张钊铭", 			//姓名
-				"major":"计算机科学与技术",	//专业
-				"classNum":"3",				//班级
-				"stdQQ":"798998087",		//QQ号
-				"stdPhone":"13800138000", 	//手机号
-				"firstWill":{				//第一志愿信息
+				"stdId":"20185584",
+				"stdName":"张钊铭",
+				"major":"计算机科学与技术",
+				"classNum":"3",
+				"stdQQ":"798998087",
+				"stdPhone":"13800138000",
+				"firstWill":{
 					"organization":"科协", 
 					"branch":"科协", 
 					"reason":"加入理由"
 				},
-    			"secondWill":{
-        		"organization":"学生会", 
-        		"branch":"文艺部", 
-        		"reason":"加入理由"
-    			},
-    			"isDispensing":"1", 		//是否调剂
-  				"isEnroll":"一志愿录取", 		//是否已录取
-				"update_time":"2019-07-26",	//志愿修改时间
-				"create_time":"2019-07-26",	//志愿创建时间
+				"secondWill":{
+					"organization":"学生会", 
+					"branch":"文艺部", 
+					"reason":"加入理由"
+				},
+				"isDispensing":"1",
+				"isEnroll":"一志愿录取",
+				"update_time":"2019-07-26",
+				"create_time":"2019-07-26"
 			}
 		]
 	}
@@ -349,27 +349,27 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"stdId":"20185584",				//学号
-		"stdName":"张钊铭", 				//姓名
-		"major":"计算机科学与技术",		//专业
-		"classNum":"3",					//班级
-		"stdQQ":"798998087", 			//QQ号
-		"stdPhone":"13800138000", 		//手机号
-		"firstWill":{					//第一志愿信息
+		"stdId":"20185584",
+		"stdName":"张钊铭",
+		"major":"计算机科学与技术",
+		"classNum":"3",
+		"stdQQ":"798998087",
+		"stdPhone":"13800138000",
+		"firstWill":{
 			"organization":"科协", 
 			"branch":"科协", 
 			"reason":"加入理由"
-    	},
-    	"secondWill":{
-      		"organization":"学生会", 
-      		"branch":"文艺部", 
-      		"reason":"加入理由"
-    	},
-    	"isDispensing":"0", 			//是否调剂
- 		"isEnroll":"未被录取", 			//是否已录取
-		"update_time":"2019-07-26",		//志愿修改时间
-		"create_time":"2019-07-26",		//志愿创建时间
-  		"remark":"备注" //备注
+		},
+		"secondWill":{
+			"organization":"学生会", 
+			"branch":"文艺部", 
+			"reason":"加入理由"
+		},
+		"isDispensing":"0",
+		"isEnroll":"未被录取",
+		"update_time":"2019-07-26",
+		"create_time":"2019-07-26",
+		"remark":"备注"
 	}
 }
 ~~~
@@ -395,13 +395,13 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"stdId":"20185584",			//学号
-		"stdName":"张钊铭",			//姓名
-		"major":"计算机科学与技术",	//专业
-		"classNum":"3",				//班级
-		"status":"未录取",			//录取状态
-		"organization":"团委",		//组织名，若未录取则不显示
-		"branch":"组织部"			//组织分支名，若未录取则不显示
+		"stdId":"20185584",
+		"stdName":"张钊铭",
+		"major":"计算机科学与技术",
+		"classNum":"3",
+		"status":"未录取",
+		"organization":"团委",
+		"branch":"组织部"
 	}
 }
 ~~~
@@ -526,15 +526,15 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"total":1,							//总学生数目
+		"total":1,
 		"student_list":[
 			{
-				"stdId":"20185584",			//学号
-				"stdName":"张钊铭", 			//姓名
-				"major":"计算机科学与技术",	//专业
-				"classNum":"3",				//班级
-				"stdQQ":"798998087",		//QQ号
-				"stdPhone":"13800138000"	//手机号
+				"stdId":"20185584",
+				"stdName":"张钊铭",
+				"major":"计算机科学与技术",
+				"classNum":"3",
+				"stdQQ":"798998087",
+				"stdPhone":"13800138000"
 			}
 		]
 	}
