@@ -299,7 +299,7 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"total":15,	//总学生数目
+		"total":15,
 		"report_list":[
 			{
 				"stdId":"20185584",
