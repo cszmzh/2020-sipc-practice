@@ -300,30 +300,30 @@ from `report_view` `a`
 	"msg":"success",
 	"data":{
 		“total”:15,	//总学生数目
-			"report_list":[
-				{
-					"stdId":"20185584",	//学号
-					"stdName":"张钊铭", //姓名
-					"major":"计算机科学与技术",	//专业
-					"classNum":"3",	//班级
-					"stdQQ":"798998087"	//QQ号
-					“stdPhone”:"13800138000", //手机号
-					firstWill:{	//第一志愿信息
-        		organization:"科协", 
-        		branch:"科协", 
-        		reason:"加入理由"
-    			},
-    			secondWill:{
-        		organization:"学生会", 
-        		branch:"文艺部", 
-        		reason:"加入理由"
-    			},
-    			isDispensing:Boolean, //是否调剂
-  					isEnroll:boolean, 	//是否已录取
-						"update_time":"2019-07-26",	//志愿修改时间
-						"create_time":"2019-07-26",	//志愿创建时间
-					}
-			]
+		"report_list":[
+			{
+				"stdId":"20185584",	//学号
+				"stdName":"张钊铭", //姓名
+				"major":"计算机科学与技术",	//专业
+				"classNum":"3",	//班级
+				"stdQQ":"798998087",	//QQ号
+				"stdPhone":"13800138000", //手机号
+				"firstWill":{	//第一志愿信息
+        	"organization":"科协", 
+        	"branch":"科协", 
+        	"reason":"加入理由"
+    		},
+    		secondWill:{
+        	"organization":"学生会", 
+        	"branch":"文艺部", 
+        	"reason":"加入理由"
+    		},
+    		"isDispensing":Boolean, //是否调剂
+  			"isEnroll":boolean, 	//是否已录取
+				"update_time":"2019-07-26",	//志愿修改时间
+				"create_time":"2019-07-26",	//志愿创建时间
+			}
+		]
 	}
 }
 ~~~
@@ -353,20 +353,20 @@ from `report_view` `a`
 		"stdName":"张钊铭", 	//姓名
 		"major":"计算机科学与技术",	//专业
 		"classNum":"3",	//班级
-		"stdQQ":"798998087"	//QQ号
-		“stdPhone”:"13800138000", //手机号
-		firstWill:{	//第一志愿信息
-        organization:"科协", 
-        branch:"科协", 
-        reason:"加入理由"
+		"stdQQ":"798998087", //QQ号
+		"stdPhone":"13800138000", //手机号
+		"firstWill":{	//第一志愿信息
+      "organization":"科协", 
+      "branch":"科协", 
+      "reason":"加入理由"
     },
-    secondWill:{
-        organization:"学生会", 
-        branch:"文艺部", 
-        reason:"加入理由"
+    "secondWill":{
+      "organization":"学生会", 
+      "branch":"文艺部", 
+      "reason":"加入理由"
     },
-    isDispensing:Boolean, //是否调剂
- 		isEnroll:Boolean, //是否已录取
+    "isDispensing":Boolean, //是否调剂
+ 		"isEnroll":Boolean, //是否已录取
 		"update_time":"2019-07-26",	//志愿修改时间
 		"create_time":"2019-07-26",	//志愿创建时间
   	"remark":"备注" //备注
@@ -526,7 +526,7 @@ from `report_view` `a`
 	"code":0,
 	"msg":"success",
 	"data":{
-		"total":1,					//总学生数目
+		"total":1,	//总学生数目
 		"student_list":[
 			{
 				"stdId":"20185584",	//学号
